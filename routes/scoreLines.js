@@ -2,10 +2,6 @@ const { Router } = require('express');
 const ScoreLine = require('../models/ScoreLine');
 const router = Router();
 
-router.get('/err', (req, res) => {
-  throw 'some err';
-});
-
 router.get('/score', (req, res) => {
   // TODO: Добавить возможность загружать постранично
   ScoreLine.find({}).then(scoreLines => {
